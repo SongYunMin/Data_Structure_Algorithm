@@ -25,16 +25,22 @@
     <Filter Include="소스 파일\Singly Linked List\Student Score Management Program">
       <UniqueIdentifier>{e22f2abb-8359-420c-b5b5-e45502070339}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Stack\Brace Check Program">
+      <UniqueIdentifier>{37b30f20-aead-43f3-9019-6c6d7e283480}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Stack\program for change of post-notation formula">
+      <UniqueIdentifier>{540caef5-0b0a-4198-a435-a9b0fa70f332}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="data.txt">
-      <Filter>소스 파일\Stack</Filter>
-    </Text>
     <Text Include="C:\Users\thd93\source\repos\실습_과제_3\data.txt">
       <Filter>소스 파일\Singly Linked List\Singly Linkde List Example</Filter>
     </Text>
     <Text Include="C:\Users\thd93\source\repos\자료구조_실습_과제_3\data.txt">
       <Filter>소스 파일\Singly Linked List\Student Score Management Program</Filter>
+    </Text>
+    <Text Include="data.txt">
+      <Filter>소스 파일\Stack\Brace Check Program</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>
@@ -45,7 +51,10 @@
       <Filter>소스 파일\Singly Linked List\Student Score Management Program</Filter>
     </ClCompile>
     <ClCompile Include="Brace Check Program.c">
-      <Filter>소스 파일\Stack</Filter>
+      <Filter>소스 파일\Stack\Brace Check Program</Filter>
+    </ClCompile>
+    <ClCompile Include="program for change of post-notation formula.c">
+      <Filter>소스 파일\Stack\program for change of post-notation formula</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
