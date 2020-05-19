@@ -6,7 +6,7 @@
 #define FALSE 0
 #pragma warning(disable : 4996)
 
-typedef int element;
+typedef char element;
 
 typedef struct {
 	element data[MAX_STACK_SIZE];
@@ -58,7 +58,7 @@ void push(StackType* s, element item)
 }
 
 // Stack Data Delete
-element pop(StackType* s) 
+element pop(StackType* s)
 {
 	//pop 할땐 일단 빈 Stack인지 확인 해야 함
 	if (is_empty(s))
@@ -109,7 +109,6 @@ void infix_to_postfix(char exp[])
 		1) * (/)
 		2) + -
 		3) ( )
-
 	*/
 
 	StackType s;
@@ -118,22 +117,22 @@ void infix_to_postfix(char exp[])
 	int i = 0;
 
 	init(&s);
-	
+
 	for (i = 0; i < len; i++)
 	{
 		ch = exp[i];
 		switch (ch)
 		{
-		// 연산자인 경우에
+			// 연산자인 경우에
 		case '+':
 		case '-':
 		case '*':
 		case '/':
-		// 스택에 이미 push된 연산자의 우선수위가 더 높거나 같으면 pop
-			// 스택이 비어있지 않았을 때 현재 읽어들인 연산자의 우선순위 보다
-			// 스택에 들어있는 연산자의 우선순위가 더크다면
+			// 스택에 이미 push된 연산자의 우선수위가 더 높거나 같으면 pop
+				// 스택이 비어있지 않았을 때 현재 읽어들인 연산자의 우선순위 보다
+				// 스택에 들어있는 연산자의 우선순위가 더크다면
 			while (!is_empty(&s) && (prec(ch) <= prec(peek(&s)))) // ch + vs peek(&s) *
-			{	
+			{
 				printf("%c", pop(&s));	// a*b+c -> ab*
 			}
 			push(&s, ch); // +
@@ -147,6 +146,7 @@ void infix_to_postfix(char exp[])
 				printf("%c", top_op);
 				top_op = pop(&s);
 			}
+			break;
 		default:	// 피 연산자
 			printf("%c", ch);
 			break;
@@ -155,7 +155,7 @@ void infix_to_postfix(char exp[])
 
 	while (!is_empty(&s))
 		printf("%c", pop(&s));
-
+	printf("\n");
 }
 
 int main(void)
