@@ -39,9 +39,6 @@
     <Text Include="C:\Users\thd93\source\repos\자료구조_실습_과제_3\data.txt">
       <Filter>소스 파일\Singly Linked List\Student Score Management Program</Filter>
     </Text>
-    <Text Include="data.txt">
-      <Filter>소스 파일\Stack\Brace Check Program</Filter>
-    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\thd93\source\repos\실습_과제_3\Linkedlist_Example.c">
@@ -54,6 +51,9 @@
       <Filter>소스 파일\Stack\Brace Check Program</Filter>
     </ClCompile>
     <ClCompile Include="program for change of post-notation formula.c">
+      <Filter>소스 파일\Stack\program for change of post-notation formula</Filter>
+    </ClCompile>
+    <ClCompile Include="data_.txt">
       <Filter>소스 파일\Stack\program for change of post-notation formula</Filter>
     </ClCompile>
   </ItemGroup>
