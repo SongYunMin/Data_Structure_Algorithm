@@ -16,37 +16,23 @@
     <Filter Include="소스 파일\Stack">
       <UniqueIdentifier>{5368281f-cac5-4b7b-99a8-b6b7c25ebdb7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Singly Linked List">
-      <UniqueIdentifier>{088199f1-d8eb-4f9c-a274-9ea7e4a5d8e2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Singly Linked List\Singly Linkde List Example">
-      <UniqueIdentifier>{dccbde29-7392-4164-a4b3-b863f0a946a3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Singly Linked List\Student Score Management Program">
-      <UniqueIdentifier>{e22f2abb-8359-420c-b5b5-e45502070339}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Stack\Brace Check Program">
       <UniqueIdentifier>{37b30f20-aead-43f3-9019-6c6d7e283480}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\Stack\program for change of post-notation formula">
       <UniqueIdentifier>{540caef5-0b0a-4198-a435-a9b0fa70f332}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Singly Linkde List">
+      <UniqueIdentifier>{faa14d2a-63df-4a85-9d56-b586f4a4f587}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Singly Linkde List\Singly Linkde List Example">
+      <UniqueIdentifier>{d61e68bf-9ac4-4a68-ac3c-ef3c84056335}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Singly Linkde List\Student Score Management Program">
+      <UniqueIdentifier>{940edc7b-a940-458c-ab10-8dc189027bf2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="C:\Users\thd93\source\repos\실습_과제_3\data.txt">
-      <Filter>소스 파일\Singly Linked List\Singly Linkde List Example</Filter>
-    </Text>
-    <Text Include="C:\Users\thd93\source\repos\자료구조_실습_과제_3\data.txt">
-      <Filter>소스 파일\Singly Linked List\Student Score Management Program</Filter>
-    </Text>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="C:\Users\thd93\source\repos\실습_과제_3\Linkedlist_Example.c">
-      <Filter>소스 파일\Singly Linked List\Singly Linkde List Example</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\thd93\source\repos\자료구조_실습_과제_3\Student Score Management Program.c">
-      <Filter>소스 파일\Singly Linked List\Student Score Management Program</Filter>
-    </ClCompile>
     <ClCompile Include="Brace Check Program.c">
       <Filter>소스 파일\Stack\Brace Check Program</Filter>
     </ClCompile>
@@ -56,5 +42,13 @@
     <ClCompile Include="data_.txt">
       <Filter>소스 파일\Stack\program for change of post-notation formula</Filter>
     </ClCompile>
+    <ClCompile Include="Linked_List_Example.c">
+      <Filter>소스 파일\Singly Linkde List\Singly Linkde List Example</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Student Score Management Program.c">
+      <Filter>소스 파일\Singly Linkde List\Student Score Management Program</Filter>
+    </None>
   </ItemGroup>
 </Project>
