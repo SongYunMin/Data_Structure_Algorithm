@@ -1,3 +1,10 @@
+/*
+DATA
+23+4*9+
+15+32-*
+52*3+42-+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -87,80 +94,44 @@ element peek(StackType* s)
 	}
 }
 
-
-// 연산자 우선순위를 알기위한 함수
-int prec(char op)
+int eval(char exp[])
 {
-	switch (op)
-	{
-	case '(': case ')': return 0;
-	case '+': case '-': return 1;
-	case '*': case '/': return 2;
-	}
-	return -1;
-}
-
-void infix_to_postfix(char exp[])
-{
-	/*
-		basic fule
-		피연선자 -> 출력
-		연산자 -> 스택에 push
-		1) * (/)
-		2) + -
-		3) ( )
-	*/
-
 	StackType s;
 	int len = strlen(exp);
-	char ch, top_op;
-	int i = 0;
+	char ch;
+	int i = 0, op1, op2, value;
 
+	// 스택 초기화
 	init(&s);
 
 	for (i = 0; i < len; i++)
 	{
 		ch = exp[i];
-		switch (ch)
+		if (ch != '+' && ch != '-' && ch != '*' && ch != '/')
 		{
-			// 연산자인 경우에
-		case '+':
-		case '-':
-		case '*':
-		case '/':
-			// 스택에 이미 push된 연산자의 우선수위가 더 높거나 같으면 pop
-				// 스택이 비어있지 않았을 때 현재 읽어들인 연산자의 우선순위 보다
-				// 스택에 들어있는 연산자의 우선순위가 더크다면
-			while (!is_empty(&s) && (prec(ch) <= prec(peek(&s)))) // ch + vs peek(&s) *
-			{
-				printf("%c", pop(&s));	// a*b+c -> ab*
+			value = ch - '0';		// 입력이 피연산자이면
+			push(&s, value);		// 스택에 넣음
+		}
+		else
+		{	// 연산자이면 피연산자를 스택에서 제거
+			op2 = pop(&s);
+			op1 = pop(&s);
+			switch (ch) {	// 연산 수행 후 스택에 저장
+			case '+': push(&s, op1 + op2); break;
+			case '-': push(&s, op1 - op2); break;
+			case '*': push(&s, op1 * op2); break;
+			case '/': push(&s, op1 / op2); break;
 			}
-			push(&s, ch); // +
-			break;
-		case '(':
-			push(&s, ch);		// 괄호는 우선순위 가장 낮음 바로 stack에 넣으면 됨
-			break;
-		case ')':
-			top_op = pop(&s);
-			while (top_op != '(') {
-				printf("%c", top_op);
-				top_op = pop(&s);
-			}
-			break;
-		default:	// 피 연산자
-			printf("%c", ch);
-			break;
-		} // end of witch
+		}
 	}	// end of loop
 
-	while (!is_empty(&s))
-		printf("%c", pop(&s));
-	printf("\n");
+	return pop(&s);
 }
 
 int main(void)
 {
-	char buf[100];
+	char buf[1024] = { 0, };
+	int result = 0;
 	FILE* fp = fopen("data.txt", "r");
 	if (fp == NULL)
 	{
@@ -171,8 +142,12 @@ int main(void)
 	while (!feof(fp))
 	{
 		fscanf(fp, "%s", buf);
-		infix_to_postfix(buf);
+		// 읽은 파일의 후위 표기 식
+		printf("후위 표기식은 %s\n", buf);
+		result = eval(buf);
+		printf("결과 값은 %d\n\n", result);
 	}
+	fclose(fp);
 
 	return 0;
 }
