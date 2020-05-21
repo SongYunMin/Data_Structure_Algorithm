@@ -39,16 +39,21 @@
     <ClCompile Include="program for change of post-notation formula.c">
       <Filter>소스 파일\Stack\program for change of post-notation formula</Filter>
     </ClCompile>
-    <ClCompile Include="data_.txt">
-      <Filter>소스 파일\Stack\program for change of post-notation formula</Filter>
-    </ClCompile>
     <ClCompile Include="Linked_List_Example.c">
       <Filter>소스 파일\Singly Linkde List\Singly Linkde List Example</Filter>
+    </ClCompile>
+    <ClCompile Include="소스.c">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Student Score Management Program.c">
       <Filter>소스 파일\Singly Linkde List\Student Score Management Program</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt">
+      <Filter>소스 파일</Filter>
+    </Text>
   </ItemGroup>
 </Project>
