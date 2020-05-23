@@ -142,6 +142,7 @@
     <ClCompile Include="Brace Check Program.c" />
     <ClCompile Include="Linked_List_Example.c" />
     <ClCompile Include="program for change of post-notation formula.c" />
+    <ClCompile Include="Queue_Example.c" />
     <ClCompile Include="소스.c" />
   </ItemGroup>
   <ItemGroup>
