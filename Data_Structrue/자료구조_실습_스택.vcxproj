@@ -140,13 +140,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Brace Check Program.c" />
-    <ClCompile Include="data_.txt" />
-    <ClCompile Include="Dynamic Array Stack program.c" />
     <ClCompile Include="Linked_List_Example.c" />
     <ClCompile Include="program for change of post-notation formula.c" />
+    <ClCompile Include="Queue_Example.c" />
+    <ClCompile Include="소스.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Student Score Management Program.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

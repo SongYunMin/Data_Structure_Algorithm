@@ -31,8 +31,8 @@
     <Filter Include="소스 파일\Singly Linkde List\Student Score Management Program">
       <UniqueIdentifier>{940edc7b-a940-458c-ab10-8dc189027bf2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Stack\Dynamic Array Stack Program">
-      <UniqueIdentifier>{42ef3abb-acf5-4a64-81da-268cf3b43822}</UniqueIdentifier>
+    <Filter Include="소스 파일\Queue">
+      <UniqueIdentifier>{53300f97-3dd1-4d2e-9420-95103ed9e4ee}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,19 +42,24 @@
     <ClCompile Include="program for change of post-notation formula.c">
       <Filter>소스 파일\Stack\program for change of post-notation formula</Filter>
     </ClCompile>
-    <ClCompile Include="data_.txt">
-      <Filter>소스 파일\Stack\program for change of post-notation formula</Filter>
-    </ClCompile>
     <ClCompile Include="Linked_List_Example.c">
       <Filter>소스 파일\Singly Linkde List\Singly Linkde List Example</Filter>
     </ClCompile>
-    <ClCompile Include="Dynamic Array Stack program.c">
-      <Filter>소스 파일\Stack\Dynamic Array Stack Program</Filter>
+    <ClCompile Include="소스.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Queue_Example.c">
+      <Filter>소스 파일\Queue</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Student Score Management Program.c">
       <Filter>소스 파일\Singly Linkde List\Student Score Management Program</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt">
+      <Filter>소스 파일</Filter>
+    </Text>
   </ItemGroup>
 </Project>
