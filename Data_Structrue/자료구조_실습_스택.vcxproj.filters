@@ -31,6 +31,9 @@
     <Filter Include="소스 파일\Singly Linkde List\Student Score Management Program">
       <UniqueIdentifier>{940edc7b-a940-458c-ab10-8dc189027bf2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Stack\Dynamic Array Stack Program">
+      <UniqueIdentifier>{42ef3abb-acf5-4a64-81da-268cf3b43822}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Brace Check Program.c">
@@ -44,6 +47,9 @@
     </ClCompile>
     <ClCompile Include="Linked_List_Example.c">
       <Filter>소스 파일\Singly Linkde List\Singly Linkde List Example</Filter>
+    </ClCompile>
+    <ClCompile Include="Dynamic Array Stack program.c">
+      <Filter>소스 파일\Stack\Dynamic Array Stack Program</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
