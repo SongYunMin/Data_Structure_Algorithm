@@ -36,15 +36,15 @@ int is_full(DequeType* q)
 void deque_print(DequeType* q)
 {
 	printf("DEQUE(front = %d rear = %d ) = ", q->front, q->rear);
-	if (is_empty(q))
+	if (!is_empty(q))
 	{
 		int i = q->front;		// i가 시작위치를 받음
 		do {
 			i = (i + 1) % (MAX_QUEUE_SIZE);
 			printf("%d | ", q->data[i]);
-			if (i == q->rear)
-				break;
-		} while (i != q->front);
+			//if (i == q->rear)
+			//	break;
+		} while (i ! = q->rear);
 	}
 	printf("\n");
 }
@@ -59,6 +59,16 @@ void add_rear(DequeType* q, element item)
 	q->data[q->rear] = item;
 }
 
+// 덱에만 있는 삽입 함수
+void add_front(DequeType* q, element val)
+{
+	if (is_full(q))
+		error("큐가 포화상태입니다.");
+	q->data[q->front] = val;
+	q->front = (q->front - 1 + MAX_QUEUE_SIZE) % MAX_QUEUE_SIZE;
+}
+
+
 // 삭제 함수
 element delete_front(DequeType* q)
 {
@@ -69,7 +79,49 @@ element delete_front(DequeType* q)
 	return q->data[q->front];
 }
 
+// 덱에만 있는 삭제 함수
+element delete_rear(DequeType* q)
+{
+	// temp같은 변수
+	int prev = q->rear;
+	if (is_empty(q))
+		error("큐가 공백상태입니다.");
+	q->rear = (q->rear - 1 + MAX_QUEUE_SIZE) % MAX_QUEUE_SIZE;
+	return q->data[prev];
+}
+
+
+// front의 맨앞 값을 볼 수 있는 함수
 element get_front(DequeType* q)
 {
+	if (is_empty(q))
+		error("큐가 공백상태입니다.");
+	return q->data[(q->front + 1) % MAX_QUEUE_SIZE];
+}
 
+element get_rear(DequeType* q)
+{
+	if (is_empty(q))
+		error("큐가 공백상태입니다.");
+	return q->data[q->rear];
+}
+
+int main(void)
+{
+	DequeType queue;
+	init_deque(&queue);
+
+	for (int i = 0; i < 3; i++)
+	{
+		add_front(&queue, i);
+		deque_print(&queue);
+	}
+
+	for (int i = 0; i < 3; i++)
+	{
+		delete_rear(&queue);
+		deque_print(&queue);
+	}
+
+	return 0;
 }
