@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Linked_List_Example.c" />
     <ClCompile Include="소스.c" />
     <ClCompile Include="Stack\Brace Check Program.c" />
     <ClCompile Include="Stack\program for change of post-notation formula.c" />
@@ -9,11 +8,13 @@
     <ClCompile Include="Queue\Queue_Example.c" />
     <ClCompile Include="Queue\Queue_Linked_List_Example.c" />
     <ClCompile Include="Queue\Queue_Student.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Student Score Management Program.c" />
+    <ClCompile Include="Singly Linkde List\Linked_List_Example.c" />
+    <ClCompile Include="Queue\Queue_Service_test.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="data.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Singly Linkde List\Student Score Management Program.c" />
   </ItemGroup>
 </Project>
