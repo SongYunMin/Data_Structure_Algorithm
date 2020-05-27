@@ -1,68 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="소스 파일\Stack">
-      <UniqueIdentifier>{5368281f-cac5-4b7b-99a8-b6b7c25ebdb7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Stack\Brace Check Program">
-      <UniqueIdentifier>{37b30f20-aead-43f3-9019-6c6d7e283480}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Stack\program for change of post-notation formula">
-      <UniqueIdentifier>{540caef5-0b0a-4198-a435-a9b0fa70f332}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Singly Linkde List">
-      <UniqueIdentifier>{faa14d2a-63df-4a85-9d56-b586f4a4f587}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Singly Linkde List\Singly Linkde List Example">
-      <UniqueIdentifier>{d61e68bf-9ac4-4a68-ac3c-ef3c84056335}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Singly Linkde List\Student Score Management Program">
-      <UniqueIdentifier>{940edc7b-a940-458c-ab10-8dc189027bf2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Queue">
-      <UniqueIdentifier>{53300f97-3dd1-4d2e-9420-95103ed9e4ee}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="Linked_List_Example.c" />
+    <ClCompile Include="소스.c" />
+    <ClCompile Include="Stack\Brace Check Program.c" />
+    <ClCompile Include="Stack\program for change of post-notation formula.c" />
+    <ClCompile Include="Queue\Deque_Example.c" />
+    <ClCompile Include="Queue\Queue_Example.c" />
+    <ClCompile Include="Queue\Queue_Linked_List_Example.c" />
+    <ClCompile Include="Queue\Queue_Student.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Brace Check Program.c">
-      <Filter>소스 파일\Stack\Brace Check Program</Filter>
-    </ClCompile>
-    <ClCompile Include="program for change of post-notation formula.c">
-      <Filter>소스 파일\Stack\program for change of post-notation formula</Filter>
-    </ClCompile>
-    <ClCompile Include="Linked_List_Example.c">
-      <Filter>소스 파일\Singly Linkde List\Singly Linkde List Example</Filter>
-    </ClCompile>
-    <ClCompile Include="소스.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Queue_Example.c">
-      <Filter>소스 파일\Queue</Filter>
-    </ClCompile>
-    <ClCompile Include="Deque_Example.c">
-      <Filter>소스 파일\Queue</Filter>
-    </ClCompile>
+    <None Include="Student Score Management Program.c" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Student Score Management Program.c">
-      <Filter>소스 파일\Singly Linkde List\Student Score Management Program</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="data.txt">
-      <Filter>소스 파일</Filter>
-    </Text>
+    <Text Include="data.txt" />
   </ItemGroup>
 </Project>

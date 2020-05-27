@@ -139,13 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Brace Check Program.c" />
-    <ClCompile Include="Deque_Example.c" />
+    <ClCompile Include="Stack\Brace Check Program.c" />
+    <ClCompile Include="Queue\Deque_Example.c" />
     <ClCompile Include="Linked_List_Example.c" />
-    <ClCompile Include="program for change of post-notation formula.c" />
-    <ClCompile Include="Queue_Example.c" />
-    <ClCompile Include="Queue_Linked_List_Example.c" />
-    <ClCompile Include="Queue_Student.c" />
+    <ClCompile Include="Stack\program for change of post-notation formula.c" />
+    <ClCompile Include="Queue\Queue_Example.c" />
+    <ClCompile Include="Queue\Queue_Linked_List_Example.c" />
+    <ClCompile Include="Queue\Queue_Student.c" />
     <ClCompile Include="소스.c" />
   </ItemGroup>
   <ItemGroup>
