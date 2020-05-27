@@ -51,6 +51,12 @@
     <ClCompile Include="Queue_Example.c">
       <Filter>소스 파일\Queue</Filter>
     </ClCompile>
+    <ClCompile Include="Queue_Student.c">
+      <Filter>소스 파일\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="Queue_Linked_List_Example.c">
+      <Filter>소스 파일\Queue</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Student Score Management Program.c">
