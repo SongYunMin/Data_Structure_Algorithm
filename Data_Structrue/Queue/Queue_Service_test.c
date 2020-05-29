@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #define MAX_QUEUE_SIZE 100
 #define TRUE 1
@@ -71,5 +72,8 @@ int main(void)
 	int sevice_time = 0;
 	int service_customer;
 	QueueObject queue;
+	initialize(&queue);
+
+	srand(time(NULL));
 	return 0;
 }
