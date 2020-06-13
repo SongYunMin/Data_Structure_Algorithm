@@ -15,6 +15,7 @@
     <ClCompile Include="Singly Linked List\Polynomial Addition.c" />
     <ClCompile Include="Singly Linked List\test.c" />
     <ClCompile Include="Double Linked List\Doyble Linked List Example\Example.c" />
+    <ClCompile Include="Double Linked List\Doyble Linked List Example\Example_2.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="data.txt" />

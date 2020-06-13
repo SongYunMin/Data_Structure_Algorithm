@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Double Linked List\Doyble Linked List Example\Example.c" />
+    <ClCompile Include="Double Linked List\Doyble Linked List Example\Example_2.c" />
     <ClCompile Include="Linked_List_문제1.c" />
     <ClCompile Include="Queue\Queue_Service_test.c" />
     <ClCompile Include="Singly Linked List\HW4.c" />
