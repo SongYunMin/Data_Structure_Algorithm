@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Queue\Queue_Service_test.c" />
+    <ClCompile Include="Singly Linkde List\Polynomial Addition.c" />
     <ClCompile Include="Stack\Brace Check Program.c" />
     <ClCompile Include="Queue\Deque_Example.c" />
     <ClCompile Include="Singly Linkde List\Linked_List_Example.c" />

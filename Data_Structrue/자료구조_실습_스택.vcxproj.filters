@@ -10,6 +10,7 @@
     <ClCompile Include="Queue\Queue_Student.c" />
     <ClCompile Include="Singly Linkde List\Linked_List_Example.c" />
     <ClCompile Include="Queue\Queue_Service_test.c" />
+    <ClCompile Include="Singly Linkde List\Polynomial Addition.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="data.txt" />
