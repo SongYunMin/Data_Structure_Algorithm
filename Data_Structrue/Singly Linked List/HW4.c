@@ -104,6 +104,14 @@
 //int main(void)
 //{
 //	ListType* list1, * list2, * list3;
+//	FILE* fp;
+//	fp = fopen("data.txt", "r");
+//
+//	while (fp == NULL)
+//	{
+//		printf("File Not Found\n");
+//		return -1;
+//	}
 //
 //	return 0;
 //}

@@ -3,22 +3,23 @@
   <ItemGroup>
     <ClCompile Include="Linked_List_문제1.c" />
     <ClCompile Include="Queue\Queue_Service_test.c" />
-    <ClCompile Include="Singly Linkde List\Polynomial Addition.c" />
     <ClCompile Include="Stack\Brace Check Program.c" />
     <ClCompile Include="Queue\Deque_Example.c" />
-    <ClCompile Include="Singly Linkde List\Linked_List_Example.c" />
     <ClCompile Include="Stack\program for change of post-notation formula.c" />
     <ClCompile Include="Queue\Queue_Example.c" />
     <ClCompile Include="Queue\Queue_Linked_List_Example.c" />
     <ClCompile Include="Queue\Queue_Student.c" />
     <ClCompile Include="소스.c" />
-    <ClCompile Include="Singly Linkde List\HW4.c" />
-    <ClCompile Include="Singly Linkde List\test.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Singly Linkde List\Student Score Management Program.c" />
+    <ClCompile Include="Singly Linked List\HW4.c" />
+    <ClCompile Include="Singly Linked List\Linked_List_Example.c" />
+    <ClCompile Include="Singly Linked List\Polynomial Addition.c" />
+    <ClCompile Include="Singly Linked List\test.c" />
+    <ClCompile Include="Double Linked List\Doyble Linked List Example\Example.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="data.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Singly Linked List\Student Score Management Program.c" />
   </ItemGroup>
 </Project>
