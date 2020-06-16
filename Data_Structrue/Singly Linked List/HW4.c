@@ -59,12 +59,13 @@ int main(void)
 {
 	ListType* list1, * list2, * list3;
 	FILE* fp;
-	int* buf;
-	int count_1 = 0, count_2 = 0, coef_buf, expon_buf;
+	int* buf_1;
+	int* buf_2;
+	int count = 0, coef_buf, expon_buf, i = 0, temp, index = 1;
 	char name_1[10];
 	char name_2[10];
 
-	// list를 생성 및 초기화한다.
+	// list를 생성 및 초기화
 	list1 = create();
 	list2 = create();
 	list3 = create();
@@ -78,29 +79,79 @@ int main(void)
 	}
 
 
-	// File Reading Area
-	fscanf(fp, "%s", name_1);
+	// 다항식의 길이를 알기위한 Code Area
+	fscanf(fp, "%s", name_1);		
+	while (!feof(fp) && fgetc(fp) != '\n')
+	{
+		// 파일을 읽어들이며 길이를 잰다.
+		fscanf(fp, "%d %d", &coef_buf, &expon_buf);
+		count++;
+	}
+	fscanf(fp, "%s", name_2);		
 	while (!feof(fp) && fgetc(fp) != '\n')
 	{
 		fscanf(fp, "%d %d", &coef_buf, &expon_buf);
-		count_1++;
+		count++;
 	}
 	// END
 
-	// Memory Allocation Area
+	// 동적할당 및 계수, 지수 읽어들이기
+	buf_1 = (int *)malloc(sizeof(int) * count);
+	buf_2 = (int *)malloc(sizeof(int) * count);
+	fseek(fp, 0, SEEK_SET);
+	fscanf(fp, "%s", name_1);		// 첫번째 다항식 읽음
+	while (!feof(fp) && fgetc(fp) != '\n')
+	{
+		// List 1의 계수, 지수 읽음
+		fscanf(fp, "%d", &buf_1[i]);
+		i++;
+	}
+	i = 0;
+	fscanf(fp, "%s", name_2);		// 두번째 다항식 읽음
+	while (!feof(fp) && fgetc(fp) != '\n')
+	{
+		// List 2의 계수, 지수 읽음
+		fscanf(fp, "%d",&buf_2[i]);
+		i++;
+	}
+	// END
 
+	// Sort Area : 차수가 큰 순으로 내림차순 
+	for (i = 0; i < count / 2-1; i++) {
+		for (int j = 0; j < count / 2 - 1; j++) {
+			if (buf_1[index] < buf_1[index + 2]) {
+				temp = buf_1[index];
+				buf_1[index] = buf_1[index + 2];
+				buf_1[index + 2] = temp;
+				// 계수를 정렬 함
+				temp = buf_1[index - 1];
+				buf_1[index - 1] = buf_1[index + 1];
+				buf_1[index + 1] = temp;
+				index += 2;
+			}
+		}
+	}
 
+	//for (i = 0; i < count / 2 - 1; i++) {
+	//	for (int j = 0; j < count / 2 - 1; j++) {
+	//		if (buf_2[index] < buf_2[index + 2]) {
+	//			temp = buf_2[index];
+	//			buf_2[index] = buf_2[index + 2];
+	//			buf_2[index + 2] = temp;
+	//		}
+	//		index += 2;
+	//	}
+	//	index = 1;
+	//}
+
+	for (int i = 0; i < 8; i++) {
+		printf("%d ", buf_1[i]);
+	}
 	// END
 
 
-	
-
-	//fscanf(fp, "%s", name_2);
-	//do {
-	//	fscanf(fp, "%d %d", &BUF.coef, &BUF.expon);
-	//	list1->head->coef = BUF.coef;
-
-	//} while (!feof(fp) && fgetc(fp) != '\n');
+	free(buf_1);
+	free(buf_2);
 
 	return 0;
 }
