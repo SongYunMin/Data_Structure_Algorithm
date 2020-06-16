@@ -14,26 +14,23 @@
 //	ListNode* tail;
 //} ListType;
 //
-//// 오류 함수
 //void error(char* message)
 //{
 //	fprintf(stderr, "%s\n", message);
-//	exit(1);
+//	exit(-1);
 //}
 //
-//// 리스트 헤더 생성 함수
-//ListType* create()
+//ListType* create(void)
 //{
-//	// plist 초기화
 //	ListType* plist = (ListType*)malloc(sizeof(ListType));
 //	plist->size = 0;
 //	plist->head = NULL;
 //	plist->tail = NULL;
+//
 //	return plist;
 //}
 //
-//// plist는 연결 리스트의 헤더를 가리키는 포인터
-//// coef는 계수, expon지수
+//// 마지막에 삽입하는 insert_last
 //void insert_last(ListType* plist, int coef, int expon)
 //{
 //	ListNode* temp = (ListNode*)malloc(sizeof(ListNode));
@@ -41,6 +38,8 @@
 //	temp->coef = coef;
 //	temp->expon = expon;
 //	temp->link = NULL;
+//
+//	// 이부분은 파일을 받아오면서 전달해주는 것도 나쁘지 않을 것 같음
 //	if (plist->tail == NULL) {
 //		plist->head = temp;
 //		plist->tail = temp;
@@ -49,62 +48,17 @@
 //		plist->tail->link = temp;
 //		plist->tail = temp;
 //	}
+//
+//	// 정렬도 여기서 해버리면??
 //	plist->size++;
-//}
-//
-//// list3 = list1 + list 2
-//void poly_add(ListType* plist1, ListType* plist2, ListType* plist3)
-//{
-//	ListNode* a = plist1->head;
-//	ListNode* b = plist2->head;
-//	int sum;
-//
-//	// a와 b가 둘다 NULL이 아닐때
-//	while (a && b)
-//	{
-//		// a와 b의 차수가 같다면?
-//		if (a->expon == b->expon) {	// a의 차수 b의 차수
-//			sum = a->coef + b->coef;
-//			if (sum != 0) insert_last(plist3, sum, a->expon);
-//			a = a->link;
-//			b = b->link;
-//		}
-//		// a가 b의 차수보다 크다면?
-//		else if (a->expon > b->expon) {
-//			insert_last(plist3, a->coef, a->expon);
-//			a = a->link;
-//		}
-//		// a가 b의 차수보다 작다면?
-//		else {
-//			insert_last(plist3, b->coef, b->expon);
-//			b = b->link;
-//		}
-//	}
-//
-//	// a나 b중의 하나가 먼저 끝나게 되면 남아있는 항들을 모두
-//	// 결과 다항식으로 복사
-//
-//	for (; a != NULL; a = a->link)
-//		insert_last(plist3, a->coef, a->expon);
-//	for (; b != NULL; b = b->link)
-//		insert_last(plist3, b->coef, b->expon);
-//}
-//
-//void poly_print(ListType* plist)
-//{
-//	ListNode* p = plist->head;
-//
-//	printf("polynomial = ");
-//	for (; p; p = p->link) {
-//		printf("%d^%d + ", p->coef, p->expon);
-//	}
-//	printf("\n");
 //}
 //
 //int main(void)
 //{
 //	ListType* list1, * list2, * list3;
+//	ListNode BUF;
 //	FILE* fp;
+//	char arrayName[30];
 //	fp = fopen("data.txt", "r");
 //
 //	while (fp == NULL)
@@ -112,6 +66,15 @@
 //		printf("File Not Found\n");
 //		return -1;
 //	}
+//	
 //
+//	while (!feof(fp)) {
+//		fscanf(fp, "%s", arrayName);
+//		do {
+//			fscanf(fp, "%d %d", &BUF.coef, &BUF.expon);
+//			list1->head->coef = BUF.coef;
+//
+//		} while (!feof(fp) && fgetc(fp) != '\n');
+//	}
 //	return 0;
 //}
