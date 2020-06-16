@@ -144,6 +144,7 @@
     <ClCompile Include="Linked_List_문제1.c" />
     <ClCompile Include="Queue\Queue_Service_test.c" />
     <ClCompile Include="Singly Linked List\HW4.c" />
+    <ClCompile Include="Singly Linked List\HW_4.c" />
     <ClCompile Include="Singly Linked List\Polynomial Addition.c" />
     <ClCompile Include="Singly Linked List\test.c" />
     <ClCompile Include="Stack\Brace Check Program.c" />
