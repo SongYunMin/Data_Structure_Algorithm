@@ -16,11 +16,14 @@ typedef struct ListType {
 }ListType;
 
 // Node를 초기화 하는 함수
-void nodeInitialization(ListType* plist)
+ListType* nodeInitialization(void)
 {
-	plist->length = 0;		// 길이 및 List의 앞, 뒷부분을 초기화
-	plist->head = NULL;
-	plist->tail = NULL;
+	ListType* plist = (ListType*)malloc(sizeof(ListType));
+	plist->length = 0;		// 길이 초기화
+	plist->head = NULL;		// List의 Head 초기화
+	plist->tail = NULL;		// List의 Tail 초기화
+
+	return plist;			// List Return
 }
 
 // 에러 출력 함수
@@ -157,16 +160,16 @@ int main(void) {
 	// 필요한 변수 선언
 	int coef, expon;
 	char buf;
-	ListType list1, list2, list3;
+	ListType* list1, *list2, *list3;
 	FILE* fp;
 
 	//다항식 초기화
-	nodeInitialization(&list1);
-	nodeInitialization(&list2);
-	nodeInitialization(&list3);
+	list1 = nodeInitialization();
+	list2 = nodeInitialization();
+	list3 = nodeInitialization();
 
 	// list3의 이름을 지정
-	strcpy(list3.name, "poly3");
+	strcpy(list3->name, "poly3");
 	// File Open
 	fp = fopen("data.txt", "r");
 	if (fp == NULL)					// 예외처리
@@ -175,43 +178,43 @@ int main(void) {
 		return 0;
 	}
 
-	fscanf(fp, "%s", list1.name);
+	fscanf(fp, "%s", list1->name);
 	while (1)
 	{
 		fscanf(fp, "%d %d", &coef, &expon);
 		fscanf(fp, "%c", &buf);
-		lastNodeInsertion(&list1, coef, expon);
+		lastNodeInsertion(list1, coef, expon);
 		if (buf == '\n')		// 개행문자로 반복문을 종료함
 			break;
 	}
-	fscanf(fp, "%s", list2.name);
+	fscanf(fp, "%s", list2->name);
 	while (1)
 	{
 		fscanf(fp, "%d %d", &coef, &expon);
 		fscanf(fp, "%c", &buf);
-		lastNodeInsertion(&list2, coef, expon);
+		lastNodeInsertion(list2, coef, expon);
 		if (feof(fp))			// 파일의 끝을 판단해서 반복문을 종료함
 			break;
 	}//파일의 끝에서 반복문 종료
 	printf("------------------------\n");
 	printf("파일에서 입력받은 다항식\n");
 	printf("------------------------\n\n");
-	polynomialPrint(&list1);					// List1 다항식 출력
-	polynomialPrint(&list2);					// List2 다항식 출력
+	polynomialPrint(list1);					// List1 다항식 출력
+	polynomialPrint(list2);					// List2 다항식 출력
 	printf("\n");
 
 	// 다항식 곱셈 함수 실행
-	polynomialMultiplication(&list1, &list2, &list3);
+	polynomialMultiplication(list1, list2, list3);
 
 	printf("--------------------------\n");
 	printf("다항식 곱셈 연산 후 다항식\n");
 	printf("--------------------------\n\n");
-	polynomialPrint(&list3);					// 결과 다항식 출력
+	polynomialPrint(list3);					// 결과 다항식 출력
 	printf("\n");
 
-	memoryUnallocation(&list1);					// List1 Unallocation
-	memoryUnallocation(&list2);					// List2 Unallocation
-	memoryUnallocation(&list3);					// List3 Unallocation
+	memoryUnallocation(list1);					// List1 Unallocation
+	memoryUnallocation(list2);					// List2 Unallocation
+	memoryUnallocation(list3);					// List3 Unallocation
 	fclose(fp);
 	return 0;
 }
