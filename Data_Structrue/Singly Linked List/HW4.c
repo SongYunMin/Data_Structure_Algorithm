@@ -58,25 +58,22 @@ void lastNodeInsertion(ListType* plist, int coef, int expon)
 }
 
 // 다항식을 지수가 큰 순서대로 정렬 함
-void polynomiaSort(ListNode* list1)
+void polynomiaSort(ListNode* list)
 {
 	int i, j, temp;					// 제어 변수 및 Node 선언
-	ListNode* p, * q, * tmp;
-	p = list1;						// 인자로 받은 list1 대입
-	while (p->link != NULL)			// list의 끝까지
-	{
+	ListNode* p, * tmp, * tmp_2;
+	p = list;						// 인자로 받은 list 대입
+	while (p->link != NULL)	{		// list의 끝까지
 		tmp = p;					// 복사된 p Node를 tmp Node에 대입
-		q = p->link;				// p의 다음항에 q Node 대입
-		while (q != NULL)			// q Node에 data가 있다면
-		{
-			// list의 1번째 항(tmp)보다 2번째 항(q)이 크다면
-			if (q->expon > tmp->expon)		
-				tmp = q;				// 1번째 항으로 2번째항 대입
-			q = q->link;				// q는 다음항을 가리킴
+		tmp_2 = p->link;				// p의 다음항을 tmp_2 Node에 대입
+		while (tmp_2 != NULL) {			// tmp_2 Node에 data가 없을 때 까지 반복
+			// list의 1번째 항(tmp)보다 2번째 항(tmp_2)이 크다면
+			if (tmp_2->expon > tmp->expon)		
+				tmp = tmp_2;				// 1번째 항으로 2번째항 대입
+			tmp_2 = tmp_2->link;				// tmp_2 는 다음항을 가리킴
 		}
 		// 지수 및 계수 자리 변경
-		if (tmp != NULL)
-		{
+		if (tmp != NULL){
 			temp = p->expon;			// 지수 정렬
 			p->expon = tmp->expon;
 			tmp->expon = temp;
@@ -99,7 +96,7 @@ void polynomialMultiplication(ListType* plist1, ListType* plist2, ListType* plis
 	// 분배 및 곱셈 진행
 	while (list1 != NULL) {
 		list2 = plist2->head;				// list2 초기화
-		while (list2 != NULL) {				// list2 의 끝까지 반복
+		while (list2 != NULL) {				
 			p = plist3->head;				// Result List 초기화
 			loopState = 0;
 			while (p != NULL) {				// Result List의 끝까지 반복
@@ -126,16 +123,15 @@ void polynomialMultiplication(ListType* plist1, ListType* plist2, ListType* plis
 }
 
 // 메모리 할당 해제 함수
-void memoryUnallocation(ListType* header)
+void memoryUnallocation(ListType* list)
 {
-	ListNode* p;
-	// 기존 포인터를 참조해야 하기 때문에 더블 포인터 사용
-	ListNode** head = &header->head;
-	while (*head)
-	{
-		p = *head;
-		*head = (*head)->link;
-		free(p);
+	ListNode* p;							// p 생성
+	//ListNode* head = header->head;		// ListType의 head Node 대입
+	while (list->head) {					// list의 끝까지
+		p = list->head;						// p에 head Node 대입
+		list->head = list->head->link;		// 다음 link 가리킴
+		free(p);							// 할당 해제
+		p = NULL;							// p 를 NULL로 만듬
 	}
 }
 
@@ -195,7 +191,10 @@ int main(void) {
 		lastNodeInsertion(list2, coef, expon);
 		if (feof(fp))			// 파일의 끝을 판단해서 반복문을 종료함
 			break;
-	}//파일의 끝에서 반복문 종료
+	}
+
+	fclose(fp);					 // 더이상 파일을 사용하지 않으므로 파일 close
+
 	printf("------------------------\n");
 	printf("파일에서 입력받은 다항식\n");
 	printf("------------------------\n\n");
@@ -215,6 +214,6 @@ int main(void) {
 	memoryUnallocation(list1);					// List1 Unallocation
 	memoryUnallocation(list2);					// List2 Unallocation
 	memoryUnallocation(list3);					// List3 Unallocation
-	fclose(fp);
+
 	return 0;
 }
