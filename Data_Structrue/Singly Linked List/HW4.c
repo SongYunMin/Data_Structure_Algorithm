@@ -57,33 +57,32 @@ void lastNodeInsertion(ListType* plist, int coef, int expon)
 // 다항식을 지수가 큰 순서대로 정렬 함
 void polynomiaSort(ListNode* list1)
 {
-	int i, j, temp;
+	int i, j, temp;					// 제어 변수 및 Node 선언
 	ListNode* p, * q, * tmp;
-
-	int cnt = 1;
-	p = list1;
-	while (p->link != NULL)
+	p = list1;						// 인자로 받은 list1 대입
+	while (p->link != NULL)			// list의 끝까지
 	{
-		tmp = p;
-		q = p->link;
-		// 지수가 큰지 판별 함
-		while (q != NULL)
+		tmp = p;					// 복사된 p Node를 tmp Node에 대입
+		q = p->link;				// p의 다음항에 q Node 대입
+		while (q != NULL)			// q Node에 data가 있다면
 		{
-			if (q->expon > tmp->expon)
-				tmp = q;
-			q = q->link;
+			// list의 1번째 항(tmp)보다 2번째 항(q)이 크다면
+			if (q->expon > tmp->expon)		
+				tmp = q;				// 1번째 항으로 2번째항 대입
+			q = q->link;				// q는 다음항을 가리킴
 		}
 		// 지수 및 계수 자리 변경
 		if (tmp != NULL)
 		{
-			temp = p->expon;
+			temp = p->expon;			// 지수 정렬
 			p->expon = tmp->expon;
 			tmp->expon = temp;
-			temp = p->coef;
+			temp = p->coef;				// 계수 정렬
 			p->coef = tmp->coef;
 			tmp->coef = temp;
 		}
 		p = p->link;
+		// 위 과정을 p의 다음항을 계속 가리키게 하면서 정렬 함
 	}
 }
 
@@ -93,29 +92,29 @@ void polynomialMultiplication(ListType* plist1, ListType* plist2, ListType* plis
 	ListNode* list1 = plist1->head;
 	ListNode* list2 = plist2->head;
 	ListNode* p = plist3->head;
-	int loopState;												// 반복문의 상태를 나타냄
+	int loopState;	// 반복문의 상태를 나타냄
+	// 분배 및 곱셈 진행
 	while (list1 != NULL) {
-		list2 = plist2->head;
-		while (list2 != NULL) {
-			p = plist3->head;
+		list2 = plist2->head;				// list2 초기화
+		while (list2 != NULL) {				// list2 의 끝까지 반복
+			p = plist3->head;				// Result List 초기화
 			loopState = 0;
-			while (p != NULL) {
-
-				if (list1->expon + list2->expon == p->expon) {
-					p->coef = list1->coef * list2->coef + p->coef;
+			while (p != NULL) {				// Result List의 끝까지 반복
+				if (list1->expon + list2->expon == p->expon) {	// 지수가 같다면
+					p->coef += list1->coef * list2->coef;		// 동류항 생성
 					loopState++;
 					break;
 				}
-				p = p->link;
+				p = p->link;				// Result List의 다음항으로
 			}
-			if (loopState == 1) {
+			if (loopState == 1) {			// 만약 동류항이라면 다음항으로
 				list2 = list2->link;
 			}
-			else {
+			else {							// 만약 동류항이 아니라면
 				// 계수는 곱하고, 지수는 더해준 값을 Insert 진행
 				lastNodeInsertion(plist3, list1->coef * list2->coef, 
 					list1->expon + list2->expon);
-				list2 = list2->link;		// List2의 다음 항 이동
+				list2 = list2->link;		
 			}
 		}
 		list1 = list1->link;				// List1의 다음 항 이동
@@ -155,6 +154,7 @@ void polynomialPrint(ListType* plist)
 }
 
 int main(void) {
+	// 필요한 변수 선언
 	int coef, expon;
 	char buf;
 	ListType list1, list2, list3;
@@ -196,8 +196,8 @@ int main(void) {
 	printf("------------------------\n");
 	printf("파일에서 입력받은 다항식\n");
 	printf("------------------------\n\n");
-	polynomialPrint(&list1);					// 기존 다항식 출력
-	polynomialPrint(&list2);
+	polynomialPrint(&list1);					// List1 다항식 출력
+	polynomialPrint(&list2);					// List2 다항식 출력
 	printf("\n");
 
 	// 다항식 곱셈 함수 실행
@@ -209,9 +209,9 @@ int main(void) {
 	polynomialPrint(&list3);					// 결과 다항식 출력
 	printf("\n");
 
-	memoryUnallocation(&list1);
-	memoryUnallocation(&list2);
-	memoryUnallocation(&list3);
+	memoryUnallocation(&list1);					// List1 Unallocation
+	memoryUnallocation(&list2);					// List2 Unallocation
+	memoryUnallocation(&list3);					// List3 Unallocation
 	fclose(fp);
 	return 0;
 }
