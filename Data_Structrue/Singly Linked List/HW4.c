@@ -91,21 +91,21 @@ void polynomialMultiplication(ListType* plist1, ListType* plist2, ListType* plis
 {
 	ListNode* list1 = plist1->head;
 	ListNode* list2 = plist2->head;
-	ListNode* p = plist3->head;
+	ListNode* resultList = plist3->head;
 	int loopState;	// 반복문의 상태를 나타냄
 	// 분배 및 곱셈 진행
 	while (list1 != NULL) {
 		list2 = plist2->head;				// list2 초기화
 		while (list2 != NULL) {				
-			p = plist3->head;				// Result List 초기화
+			resultList = plist3->head;				// Result List 초기화
 			loopState = 0;
-			while (p != NULL) {				// Result List의 끝까지 반복
-				if (list1->expon + list2->expon == p->expon) {	// 지수가 같다면
-					p->coef += list1->coef * list2->coef;		// 동류항 생성
+			while (resultList != NULL) {				// Result List의 끝까지 반복
+				if (list1->expon + list2->expon == resultList->expon) {	// 지수가 같다면
+					resultList->coef += list1->coef * list2->coef;		// 동류항 생성
 					loopState++;
 					break;
 				}
-				p = p->link;				// Result List의 다음항으로
+				resultList = resultList->link;				// Result List의 다음항으로
 			}
 			if (loopState == 1) {			// 만약 동류항이라면 다음항으로
 				list2 = list2->link;
@@ -126,7 +126,7 @@ void polynomialMultiplication(ListType* plist1, ListType* plist2, ListType* plis
 void memoryUnallocation(ListType* list)
 {
 	ListNode* p;							// p 생성
-	//ListNode* head = header->head;		// ListType의 head Node 대입
+	//ListNode* head = list->head;			// ListType의 head Node 대입
 	while (list->head) {					// list의 끝까지
 		p = list->head;						// p에 head Node 대입
 		list->head = list->head->link;		// 다음 link 가리킴

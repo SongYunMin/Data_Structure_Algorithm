@@ -128,6 +128,7 @@
 //	poly_add(list1, list2, list3);
 //	poly_print(list3);
 //
+//	// 이거 이렇게 해제해도 됨..?
 //	free(list1);
 //	free(list2);
 //	free(list3);
