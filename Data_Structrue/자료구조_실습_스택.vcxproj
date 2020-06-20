@@ -149,6 +149,7 @@
     <ClCompile Include="Stack\Brace Check Program.c" />
     <ClCompile Include="Queue\Deque_Example.c" />
     <ClCompile Include="Singly Linked List\Linked_List_Example.c" />
+    <ClCompile Include="Stack\PostFixCalculator.c" />
     <ClCompile Include="Stack\program for change of post-notation formula.c" />
     <ClCompile Include="Queue\Queue_Example.c" />
     <ClCompile Include="Queue\Queue_Linked_List_Example.c" />
