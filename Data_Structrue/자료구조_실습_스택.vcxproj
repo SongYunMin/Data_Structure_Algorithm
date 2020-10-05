@@ -139,6 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="(구조체)성적프로그램.c" />
+    <ClCompile Include="(순환)1부터 n분의 1의 합.c" />
+    <ClCompile Include="(순환)x의n승.c" />
     <ClCompile Include="Double Linked List\Doyble Linked List Example\Example.c" />
     <ClCompile Include="Double Linked List\Doyble Linked List Example\Example_2.c" />
     <ClCompile Include="Linked_List_문제1.c" />
@@ -154,7 +157,7 @@
     <ClCompile Include="Queue\Queue_Example.c" />
     <ClCompile Include="Queue\Queue_Linked_List_Example.c" />
     <ClCompile Include="Queue\Queue_Student.c" />
-    <ClCompile Include="소스.c" />
+    <ClCompile Include="%28순환%29n까지의 합.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Singly Linked List\Student Score Management Program.c" />
